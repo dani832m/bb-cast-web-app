@@ -47,6 +47,24 @@ header img {
   justify-content: center;
 }
 
+.quote {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 50px;
+  margin-bottom: 30px;
+}
+
+.quote i {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.quote strong span {
+  font-weight: normal;
+}
+
 .search {
   height: 100px;
 }
