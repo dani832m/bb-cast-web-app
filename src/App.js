@@ -1,16 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "./components/ui/Header";
-import CharacterGrid from "./components/characters/CharacterGrid";
-import Search from "./components/ui/Search";
 import Quote from "./components/ui/Quote";
+import Search from "./components/ui/Search";
+import CharacterGrid from "./components/characters/CharacterGrid";
 import "./App.css";
 
 const App = () => {
-  const [items, setItems] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [query, setQuery] = useState("");
   const [quote, setQuote] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [items, setItems] = useState([]);
+  const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    const fetchQuote = async () => {
+      const result = await axios(`https://www.breakingbadapi.com/api/quote/random`);
+      setQuote(result.data);
+    };
+    fetchQuote();
+  }, []);
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -21,12 +29,6 @@ const App = () => {
     };
     fetchItems();
   }, [query]);
-
-  const fetchQuote = async () => {
-    const result = await axios(`https://www.breakingbadapi.com/api/quote/random`);
-    setQuote(result.data);
-  };
-  //fetchQuote();
 
   return (
     <div className="container">

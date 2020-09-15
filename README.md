@@ -4,7 +4,7 @@ React Web App based on Brad Traversy's [Breaking Bad Cast Project](https://githu
 
 ## More
 
-This app displays a card-based interface with various characters from the TV series Breaking Bad. All data is fetched from an external API.
+This app generates a random quote and displays a card-based interface with various characters from the TV series Breaking Bad. All data is fetched from an external API.
 
 ## Credits
 
